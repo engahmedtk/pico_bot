@@ -9,6 +9,7 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
+        <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
     </joint>
 
     <link name="chassis">
@@ -66,7 +67,7 @@
 
         <collision>
             <geometry>
-                <cylinder length="0.035" radius="0.04" />
+                <sphere radius="0.04" />
             </geometry>
         </collision>
 
@@ -100,7 +101,7 @@
 
         <collision>
             <geometry>
-                <cylinder length="0.035" radius="0.04" />
+                <sphere radius="0.04" />
             </geometry>
         </collision>
 
@@ -120,7 +121,7 @@
 
     <link name="caster_wheel">
 
-        <xacro:inertial_sphere mass="0.1" radius="0.04">
+        <xacro:inertial_sphere mass="0.5" radius="0.04"> <!-- Mass changed to 0.5 to fix tilting,, previous mass was 0.1-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
 
